@@ -1,0 +1,20 @@
+Source: fivi
+Section: utils
+Priority: extra
+Maintainer: Uli Martens <uli@youam.net>
+Standards-Version: 3.6.2.1
+Build-Depends: libglib2.0-dev
+
+Package: fivi
+Architecture: any
+Depends: ${shlibs:Depends}
+Section: utils
+Priority: extra
+Description: Show throughput and progress on simple filters
+ fivi (FIlter VIewer) can be used as a wrapper around any filter to display
+ information about the status of the filter, such as throughput, run time,
+ file sizes, estimated growth and so on.
+ .
+ To use it, simply prepend it to your filter command line to get its standard
+ input and  standard output piped through fivi, you'll get the throughput
+ information on standard error.

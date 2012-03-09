@@ -1,0 +1,9 @@
+#!/bin/bash
+
+./fivi bunzip2 < testdata.in > /dev/null
+el=$?
+if [ "x$el" == "x2" ]; then
+	exit 0
+else
+	exit 1
+fi

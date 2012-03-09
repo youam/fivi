@@ -1,0 +1,13 @@
+* time
+
+  - elapsed time (ELA)
+  - if total size is known, estimated total time (ETT=ELA/progress)
+  - if total size is known, estimated time remaining (ETR=ETT-ELA)
+  - if total size is known, estimated timestamp of completion
+
+* input side
+
+  - bytes read
+  - if total size is known, total size (either read or given at command line)
+  - if total size is known, bytes remaining
+  - if 

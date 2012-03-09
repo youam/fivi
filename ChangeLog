@@ -1,0 +1,72 @@
+*** ChangeLog should be synced from svn log
+
+2005-07-14  1:40:00 +0300  Uli Martens <uli@youam.net>
+
+    * humanize.c: rewrote, made a bit more flexible
+
+2005-07-14  0:40:00 +0300  Uli Martens <uli@youam.net>
+
+    * humanize.c, humanize.h: split humanize into separate file
+
+2004-11-08  0:05:00 +0100  Uli Martens <uli@youam.net>
+
+    * bootstrap: rewrote as makefile, added clean target
+
+2004-11-07  0:15:00 +0100  Uli Martens <uli@youam.net>
+
+    * test2, Makefile.am: create the needed test data
+
+2004-11-05  0:50:00 +0100  Uli Martens <uli@youam.net>
+
+    * renamed from 'paips' to 'fiev'
+
+2004-11-02 23:50:00 +0100  Uli Martens <uli@youam.net>
+
+    * configure.ac: renamed configure.in
+
+2004-11-02 23:30:00 +0100  Uli Martens <uli@youam.net>
+
+    * fileutils.c, fileutils.h, main.c, Makefile.am: moved set_fl()/get_fl()
+      from main.c into fileutils*
+    * configure.in: added two checks
+
+2004-10-31 23:30:00 +0100  Uli Martens <uli@youam.net>
+
+    * main.c: minimal support for output of the elapsed time (using glib)
+    * configure.in, Makefile.am: depend on glib-2.0
+
+2004-09-12 00:05:00 +0200  Uli Martens <uli@youam.net>
+
+    * main.c: move the file descriptors and byte counters into a struct,
+      to ease output generation
+
+2004-09-07 23:45:00 +0200  Uli Martens <uli@youam.net>
+
+    * main.c: add a primitive output routine
+
+2004-08-16 06:00:00 +0200  Uli Martens <uli@youam.net>
+
+    * main.c: add buffer wrapping so that large files can be processed
+
+2004-07-15 07:00:00 +0200  Uli Martens <uli@youam.net>
+
+    * Makefile.am test1: added a first check
+    * main.c: sourced the main loop into an own function
+    * main.c: corrected the statefullnes a bit
+
+2004-07-14 20:30:00 +0200  Uli Martens <uli@youam.net>
+
+    * main.c: clean up the first half of the main loop
+
+2004-07-14 19:00:00 +0200  Uli Martens <uli@youam.net>
+
+    * main.c: de-const-ified the command line stuff
+    * bootstrap configure.in Makefile.am: autotoolification
+    * AUTHORS COPYING INSTALL NEWS README: some GNU boilerplates, 
+      mostly defaults and/or empty
+
+2004-07-14 02:00:00 +0200  Uli Martens <uli@youam.net>
+
+    * main.c: added first working prototype to repository
+    * ChangeLog: added to first commit
+

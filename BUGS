@@ -1,0 +1,2 @@
+* there's a race condition when the output side of a pipe dies but the input
+  side has already written all its data

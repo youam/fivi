@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+all:	bootstrap
+
+clean:
+	# aclocal stuff
+	rm -rf aclocal.m4
+	rm -rf Makefile.in Makefile autom4te.cache config.guess \
+	       config.h config.h.in config.log config.status config.sub \
+	       configure compile depcomp install-sh missing mkinstalldirs \
+	       stamp-h stamp-h.in *.o
+	# make clean doesn't yet delete this:
+	rm -rf fivi stamp-h1 .deps
+	# temp. stuff from make check
+	rm -rf testdata.in testdata.in.bz2 testdata.out
+
+bootstrap: clean
+	aclocal
+	autoheader
+	automake --gnu --add-missing --copy
+	autoconf
+
+.PHONY:	bootstrap clean

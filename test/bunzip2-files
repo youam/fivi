@@ -1,0 +1,4 @@
+#!/bin/bash
+
+/usr/bin/time ./fivi bzip2 < testdata.in > testdata.out
+cmp testdata.in.bz2 testdata.out

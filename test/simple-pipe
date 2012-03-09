@@ -1,0 +1,6 @@
+#!/bin/bash
+
+test="foobar baz $$ $RANDOM"
+
+cmp <( echo "${test}" | ./fivi hexdump -C ) \
+    <( echo "${test}" | hexdump -C )

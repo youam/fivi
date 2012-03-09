@@ -1,0 +1,16 @@
+* output triggered by throughput
+* disable time-based output
+* make buffer size configurable
+* adjustable last output string
+* make input and output streams configurable
+* < weasel> - ich haette gerne alle X sekunden den status auf stderr ausgegeben, als ganz normale zeile
+* 23:14:13 < weasel> warum gibt es das nicht einfach an stdout aus?
+  23:14:39 < youam> ist ein implizites cat sinnvoll?
+  23:14:43 < weasel> ja.
+  23:14:45 < youam> ok...
+  23:14:52 < weasel> bzw nicht cat aufrufen, sondern so tun als waers cat
+* error.c: fatalmsg, errormsg, fatal, error, ...
+* buffer.c: rename functions...
+* main.c: move write/read with buffer functions into sep. functions?
+* on SIGWINCH, check whether the output string is to long for the window and shorten it
+* check command args - right now, fivi failes an assertion when called without arguments

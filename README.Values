@@ -1,0 +1,12 @@
+constant values:
+
+* input stream size (for regular files)
+
+measurable values:
+
+* runtime
+* bytes read from input stream
+* bytes written to output stream
+
+
+
