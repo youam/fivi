@@ -25,5 +25,6 @@
 #include "common.h"
 
 char *humanize(off_t n);
+char *human_time(double t);
 
 #endif	/* HUMANIZE_H */

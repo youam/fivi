@@ -57,7 +57,11 @@ int str_str( FILE *f, void *p1, struct strmod_s *m )
 int str_time( FILE *f, void *p1, struct strmod_s *m )
 {
 	double *v = p1;
-	return fprintf( f, "%5.1fs", *v );
+	if ( m->humanize ) {
+		return fprintf( f, "%s", human_time( *v ) );
+	} else {
+		return fprintf( f, "%5.1fs", *v );
+	}
 }
 
 int str_off_t( FILE *f, void *p1, struct strmod_s *m )

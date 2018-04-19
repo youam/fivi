@@ -21,6 +21,7 @@
  */
 #include "humanize.h"
 
+#include <math.h>
 
 char *humanize(off_t n)
 {
@@ -54,3 +55,46 @@ char *humanize(off_t n)
 	return r;
 }
 
+/*
+ * human readable duration
+ *    0.0s
+ *   10.2s
+ *   9m59s
+ *   12,0m
+ *   23,0h
+ *   9d23h
+ *   10,1d
+ *   9999d */
+char *human_time(double t)
+{
+	char *s = "undef";
+	int r = 0;
+	
+	int x = fmod( t * 10, 10 );
+	int S = fmod( t, 60 );
+	int M = fmod( t / 60, 60 );
+	int H = fmod( t / 60 / 60, 24 );
+	int D =       t / 60 / 60 / 24;
+
+	if ( D > 9999 ) {
+		s = "INVAL";
+	} else if ( D >= 100 ) {
+		r = asprintf( &s, "%4id", D );
+	}
+
+	if ( t < 0 ) {
+		fprintf( stderr, "oops. duration can't be negative!\n" );
+		s = "     ";
+	} else if ( t < 60 ) {
+		r = asprintf( &s, "%4.1fs", t );
+	} else if ( t < 60 * 10 ) {
+		r = asprintf( &s, "%im%02is", (int)(t / 60), (int)fmod( t, 60 ) );
+	} else if ( t < 60 * 60 ) {
+		r = asprintf( &s, "%4.1fm", t / 60 );
+	}
+
+	if ( r == -1 ) {
+		s = NULL;
+	}
+	return s;
+}

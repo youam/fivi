@@ -2,7 +2,7 @@ bin_PROGRAMS = fivi
 
 fivi_SOURCES = main.c fileutils.c fileutils.h humanize.c humanize.h buffer.c buffer.h error.c error.h strutils.c strutils.h common.h
 fivi_CFLAGS  = -Wall @GLIB_CFLAGS@
-fivi_LDFLAGS = @GLIB_LIBS@
+fivi_LDFLAGS = -lm @GLIB_LIBS@
 
 TESTS = test/*
 EXTRA_DIST = test/*
